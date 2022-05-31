@@ -17,4 +17,6 @@ public interface ProductCRUD {
     public boolean addProduct(Productos productos);
     public boolean updateProduct(Productos productos);
     public boolean deleteProduct(int id);
+    
+   
 }

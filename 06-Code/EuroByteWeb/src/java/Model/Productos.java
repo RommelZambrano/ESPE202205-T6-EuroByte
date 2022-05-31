@@ -6,30 +6,29 @@ package Model;
  * @author Rommel Zambrano rzam_
  */
 public class Productos {
-    int id;
+
     private String nombre;
     private String descripcion;
-    private float cantidad;
-    private float precio;
- 
-    
-    public Productos (){
-        
-    }
-    public Productos(int id, String nombre, String descripcion, float cantidad, float precio) {
-        this.id = id;
+    private int cantidad;
+    private double precio ;
+    private double total;
+    private double ganancia;
+
+    public Productos(String nombre, String descripcion, int cantidad, double precio, double total, double ganancia) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.total = total;
+        this.ganancia = ganancia;
     }
+        
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+  
+ 
+    
+    public Productos (){
+        
     }
 
     public String getNombre() {
@@ -48,21 +47,35 @@ public class Productos {
         this.descripcion = descripcion;
     }
 
-    public float getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(float cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public float getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(float precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-   
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
+    }
+
+    public double getGanancia() {
+        return ganancia;
+    }
+
+    public void setGanancia(double ganancia) {
+        this.ganancia = ganancia;
+    }
 }
