@@ -4,9 +4,25 @@
         <servlet-name>Controlador</servlet-name>
         <servlet-class>Controller.Controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModelDAO</servlet-name>
+        <servlet-class>ModelDAO.ModelDAO</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Controladorr</servlet-name>
+        <servlet-class>Controller.Controladorr</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModelDAO</servlet-name>
+        <url-pattern>/ModelDAO</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Controladorr</servlet-name>
+        <url-pattern>/Controladorr</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

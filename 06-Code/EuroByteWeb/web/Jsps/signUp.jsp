@@ -1,7 +1,7 @@
 <%-- 
-    Document   : editProducts
-    Created on : May 22, 2022, 6:24:08 PM
-    Author     : Rommel Zambrano rzam_
+    Document   : signUp
+    Created on : May 29, 2022, 11:40:32 PM
+    Author     : rzam_
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registro Usuarios</title>
     </head>
     <body>
         <h1>Hello World!</h1>
