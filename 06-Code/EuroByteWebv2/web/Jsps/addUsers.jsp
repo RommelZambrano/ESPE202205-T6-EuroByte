@@ -14,12 +14,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../CSS/PageCss.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Refresh" content="3;URL=../index.html"
 
         <title>Usuarios Agregados</title>
     </head>
     <body>
-        <h1>Añadir Usuario</h1>
+        <header>Añadir Usuario</header>
         <% 
             MongoDBConnection mongoDBConnection = new MongoDBConnection();
             MongoDBConnection mongoDBMetodos = new MongoDBConnection();
