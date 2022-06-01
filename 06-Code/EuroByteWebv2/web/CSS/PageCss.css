@@ -1,0 +1,120 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 31/05/2022, 17:22:54
+    Author     : Isma
+*/
+
+*{
+    margin: 5px;
+    padding: 0px;
+}
+
+body{
+    background-color: #ecead2;
+background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='brick-wall' fill='%23c0b127' fill-opacity='0.4'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+#fondo{
+    font-family: cursive;
+    font-size: 20pt;
+    width: 40%;
+    margin: auto;
+}
+
+header{
+    text-align: center;
+    margin: 5px;
+    color: black;
+    padding: 5px;
+    background: chocolate;
+}
+
+#AgregarProducto{
+    text-align: center;
+    margin: 30px;
+    padding: inherit;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+    text-shadow: 2px 2px 2px blue;
+    
+
+}
+
+#MostrarProductos{
+    margin: 30px;
+    text-shadow: 2px 2px 2px blue; 
+    padding: inherit;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+}
+
+#AgregarUsuarios{
+    margin: 30px;
+    text-shadow: 2px 2px 2px blue;
+    padding: inherit;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+}
+
+#MostrarUsuarios{
+    margin: 30px;
+    padding: inherit;
+     text-shadow: 2px 2px 2px blue;
+    border: 0px;
+    font-size: 40px;
+    background: none;
+}
+
+
+#GuardarUsuarios{
+    margin: 15px;
+    text-shadow: 2px 2px 2px blue;
+    padding: inherit;
+    color: black;
+    border: 0px;
+    font-size: 20px;
+}
+
+#DescartarUsuarios{
+    margin: 15px;
+    padding: inherit;
+    color: black;
+    border: 0px;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px blue;
+}
+
+#GuardarProductos{
+    margin: 15px;
+    text-shadow: 2px 2px 2px blue;
+    padding: inherit;
+    color: black;
+    border: 0px;
+    font-size: 20px;
+}
+
+#DescartarProductos{
+    margin: 15px;
+    padding: inherit;
+    color: black;
+    border: 0px;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px blue;
+}
+
+#DatosEnPantalla table tr th{
+    background: border-box;
+    color: black;
+    font-size: 30px;
+}
+
+#DatosEnPantalla table tr th{
+    margin: 20px;
+    padding: 10px;
+}

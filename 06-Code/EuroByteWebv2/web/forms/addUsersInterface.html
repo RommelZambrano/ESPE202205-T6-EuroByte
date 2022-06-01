@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <link href="../CSS/PageCss.css" rel="stylesheet" type="text/css"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+      <body class="container">
+          <div id = "fondo">
+        <header> Agregar Usuarios</header>
+        <hr>
+        <br>
+        <div>           
+            <div >             
+           <br>
+        <div class="">
+        <form id="form" action="../Jsps/addUsers.jsp">
+            <div class="col-12">
+                <label for="UsuarioNombre">Nombre:</label>
+                <div class="position-relative" >
+                    <input type="text" class="form-control"  name="UsuarioNombre">
+                </div>               
+            </div>
+            <div class="col-12">
+                <label for="UsuarioApellido">Apellido:</label>
+                <div class="position-relative" >
+                    <input type="text" class="form-control " name="UsuarioApellido">
+                </div>         
+            </div>
+            <div class="col-12">
+                <label for="UsuarioDireccion">Direccion:</label>
+                <div class="position-relative" >
+                    <input type="text" class="form-control" name="UsuarioDireccion">
+                </div>                
+            </div>
+                 <div class="col-12">
+                <label for="UsuarioCedula">Cedula:</label>
+                <div class="position-relative" >
+                    <input type="text" class="form-control" name="UsuarioCedula">
+                </div>           
+            </div>
+            <div class="form-row align-items-center">               
+                <div class="position-relative">             
+                <br>
+              <button type="submit" class="btn btn-primary" id="GuardarUsuarios">Guardar</button>
+              <button type="reset" class="btn btn-secondary" id="DescartarUsuarios">Descartar</button>
+        </form>
+            </div>
+                <br>
+                 </div>
+        </div>
+            </div>
+    </body>
+</html>
