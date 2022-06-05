@@ -1,0 +1,16 @@
+Inventario de productos, registro y venta
+
+Entrevista
+T: ¿Que objetivo tiene este desarrollo en su tienda?
+E: Poder realizar registros de mis productos y usuarios que compren en ella.
+T: ¿Qué el lo que le interesa calcular?
+E: Deseo que calcule la cantidad que registre y la ganancia de mis productos 
+T: ¿Como quiere que este orientado el programa?
+E: Ayuda como registro en donde pueda hacer un inventario 
+
+REQ. 
+Calculo de cantidad de productos por precio
+Ganancias de cada producto por su cantidad 
+Tabla incrementan de Usuarios 
+Registro de productos y usuarios
+Muestra de los datos registrados 
