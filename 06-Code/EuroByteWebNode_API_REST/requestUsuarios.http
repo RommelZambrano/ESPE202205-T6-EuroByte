@@ -2,12 +2,12 @@
 POST http://localhost:2000/api/usuarios HTTP/1.1
 Content-Type: application/json
 
-
 {
-    "name": "Ismael",
-    "lastname": "Salazar",
+    "name": "Luis",
+    "lastname": "Hernandez",
     "address": "Quito",
-    "ci": 1727284554
+    "ci": 1727284543
 }
 
+###
 GET http://localhost:2000/api/usuarios HTTP/1.1
