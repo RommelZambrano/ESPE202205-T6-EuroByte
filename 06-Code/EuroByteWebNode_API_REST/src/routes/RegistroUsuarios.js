@@ -27,30 +27,30 @@ router.post("/usuarios", (req, res) => {
   });
   
   // GET ONE
-  router.get("/usuarios/:id", (req, res) => {
-    const { id } = req.params;
+  router.get("/usuarios/:ci", (req, res) => {
+    const { ci } = req.params;
     usuarioSchema
-      .findById(id)
+      .findById(ci)
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
   
   // DELETE 
-  router.delete("/usuarios/:id", (req, res) => {
-    const { id } = req.params;
+  router.delete("/usuarios/:ci", (req, res) => {
+    const { ci } = req.params;
     console.log("Usuario eliminado");
     usuarioSchema
-      .remove({ _id: id })
+      .remove({ ci: ci })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
   
   // UPDATE 
-  router.put("/usuarios/:id", (req, res) => {
-    const { id } = req.params;
-    const { name, lastname, address, ci } = req.body;
+  router.put("/usuarios/:ci", (req, res) => {
+    const { ci } = req.params;
+    const { name, lastname, address } = req.body;
     usuarioSchema
-      .updateOne({ _id: id }, { $set: { name, lastname, address, ci} })
+      .updateOne({ ci:ci }, { $set: { name, lastname, address} })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
