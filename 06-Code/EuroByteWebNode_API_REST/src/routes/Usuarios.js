@@ -1,6 +1,5 @@
 const express = require('express');
-const usuarioSchema = require("../models/Usuarios");
-
+const usuariosSchema = require("../models/Usuarios");
 
 const router = express.Router();
 
@@ -9,7 +8,7 @@ const router = express.Router();
 
 // POST (create users)
 router.post("/usuarios", (req, res) => {
-    const usuario = usuarioSchema(req.body);
+    const usuario = usuariosSchema(req.body);
     console.log("Usuario agregado");
     console.log(req.body);
     usuario
@@ -20,38 +19,39 @@ router.post("/usuarios", (req, res) => {
   
   // GET ALL
   router.get("/usuarios", (req, res) => {
-    usuarioSchema
+    usuariosSchema
       .find()
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
   
   // GET ONE
-  router.get("/usuarios/:ci", (req, res) => {
-    const { ci } = req.params;
-    usuarioSchema
-      .findById(ci)
+  router.get("/usuarios/:id", (req, res) => {
+    const { id } = req.params;
+    usuariosSchema
+      .findById(id)
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
   
   // DELETE 
-  router.delete("/usuarios/:ci", (req, res) => {
-    const { ci } = req.params;
+  router.delete("/usuarios/:id", (req, res) => {
+    const { id } = req.params;
     console.log("Usuario eliminado");
-    usuarioSchema
-      .remove({ ci: ci })
+    usuariosSchema
+      .remove({ _id: id })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
   
   // UPDATE 
-  router.put("/usuarios/:ci", (req, res) => {
-    const { ci } = req.params;
-    const { name, lastname, address } = req.body;
-    usuarioSchema
-      .updateOne({ ci:ci }, { $set: { name, lastname, address} })
+  router.put("/usuarios/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, lastname, address, ci } = req.body;
+    usuariosSchema
+      .updateOne({ _id: id }, { $set: { name, lastname, address, ci} })
       .then((data) => res.json(data))
       .catch((error) => res.json({ message: error }));
   });
+
 module.exports = router;
