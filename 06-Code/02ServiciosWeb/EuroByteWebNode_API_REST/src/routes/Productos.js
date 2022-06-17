@@ -3,7 +3,7 @@ const productoSchema = require("../models/Productos");
 
 const router = express.Router();
 
-// POST (create products)
+// post (create productos)
 router.post("/productos", (req, res) => {
   const producto = productoSchema(req.body);
   console.log("producto agregado");
@@ -14,7 +14,7 @@ router.post("/productos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-// GET ALL
+// get all
 router.get("/productos", (req, res) => {
   productoSchema
     .find()
@@ -22,33 +22,38 @@ router.get("/productos", (req, res) => {
     .catch((error) => res.json({ message: error }));
 });
 
-// GET ONE
-router.get("/productos/:id", (req, res) => {
-  const { id } = req.params;
+// get
+router.get("/productos/:name", (req, res) => {
+  const { name } = req.params;
   productoSchema
-    .findById(id)
+    .findOne({name})
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-// DELETE 
-router.delete("/productos/:id", (req, res) => {
-  const { id } = req.params;
+// delete 
+router.delete("/productos/:name", (req, res) => {
+  const { name } = req.params;
   console.log("producto eliminado");
   productoSchema
-    .remove({ _id: id })
+    .remove({ name: name })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
 
-// UPDATE 
-router.put("/productos/:id", (req, res) => {
-  const { id } = req.params;
+// put  (update) 
+router.put("/productos/:name", (req, res) => {
   const { name, description, quantity, price, total, profit } = req.body;
   productoSchema
-    .updateOne({ _id: id }, { $set: { name, description, quantity, price, total, profit } })
+    .updateOne({ name: req.params.name }, 
+               { $set: { name, 
+                         description,   
+                         quantity, 
+                         price, 
+                         total, 
+                         profit } 
+              })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }));
 });
-
 module.exports = router;
