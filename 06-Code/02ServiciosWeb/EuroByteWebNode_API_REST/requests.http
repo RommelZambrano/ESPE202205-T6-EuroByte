@@ -1,0 +1,35 @@
+###
+POST http://localhost:2000/api/productos HTTP/1.1
+Content-Type: application/json
+
+
+{
+  "name": "Manzana",
+  "description": "Fruta",
+  "quantity": 4,
+  "price": 1,
+  "total": 4,
+  "profit": 1
+}
+
+###
+GET http://localhost:2000/api/productos HTTP/1.1
+
+###
+GET http://localhost:2000/api/productos/6137e2bb2e329eb206b0073e HTTP/1.1
+
+###
+DELETE http://localhost:2000/api/productos/62a83179ea512bdbff1f0270 HTTP/1.1
+
+###
+PUT http://localhost:2000/api/productos/62a83179ea512bdbff1f0270 HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Sandia",
+  "description": "Fruta",
+  "quantity": 3,
+  "price": 3,
+  "total": 9,
+  "profit": 3
+}
