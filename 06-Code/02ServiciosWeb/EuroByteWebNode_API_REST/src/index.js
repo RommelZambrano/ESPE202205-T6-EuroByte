@@ -7,6 +7,7 @@ const productoRoute = require("./routes/Productos");
 const usuarioRoute = require("./routes/Usuarios");
 const proveedorRoute = require("./routes/Proveedor");
 const facturasRoute = require("./routes/Facturas");
+const metodoRoute = require("./routes/MetodoPago")
 
 // settings
 const app = express();
@@ -18,6 +19,7 @@ app.use("/api", productoRoute);
 app.use("/api", usuarioRoute);
 app.use("/api", proveedorRoute);
 app.use("/api", facturasRoute);
+app.use("/api", metodoRoute)
 
 // routes
 app.get("/", (req, res) => {
