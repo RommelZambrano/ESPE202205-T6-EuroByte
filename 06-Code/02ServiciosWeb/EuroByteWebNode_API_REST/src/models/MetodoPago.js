@@ -11,7 +11,6 @@ const metodoPagoSchema = mongoose.Schema ({
         required: true
     }
 
-
 })
 
 metodoPagoSchema.set("toJSON",{
