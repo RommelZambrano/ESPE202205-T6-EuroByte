@@ -1,0 +1,10 @@
+###
+POST http://localhost:2000/api/usuarios HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Joel",
+    "description":"producto",
+    "total": 5
+    
+}
