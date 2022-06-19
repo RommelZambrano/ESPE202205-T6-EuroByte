@@ -13,4 +13,13 @@ const proveedorSchema=mongoose.Schema({
         required:true
     }
 })
+
+proveedorSchema.set("toJSON",{
+    virtuals: false,     
+     versionKey: false, 
+     transform: (doc, ret) => {
+      delete ret._id;
+  }
+});
+
 module.exports=mongoose.model('Proveedor',proveedorSchema,'Proveedor')

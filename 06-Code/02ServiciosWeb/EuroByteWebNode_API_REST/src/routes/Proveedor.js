@@ -18,26 +18,25 @@ const router = express.Router();
     .catch ((error)=>res.json({message:error}))
 
  });
- router.get("/proveedores/:id",(req,res)=>{
-    const{ id }=req.params;
+ router.get("/proveedores/:name",(req,res)=>{
+    const{ name  }=req.params;
     proveedorSchema
-    .findById(id)
+    .findOne(name)
     .then((data)=>res.json(data))
     .catch ((error)=>res.json({message:error}))
  });
- router.delete("/proveedores/:id",(req,res)=>{
-    const{ id }=req.params;
+ router.delete("/proveedores/:name",(req,res)=>{
+    const{ name }=req.params;
     console.log("Proveedor eliminado");
     proveedorSchema
-    .remove ( { _id:id } )
+    .remove ( { name } )
     .then((data)=>res.json(data))
     .catch ((error)=>res.json({message:error}))
  });
- router.put ("/proveedores/:id",(req,res)=>{
-    const{ id }=req.params;
+ router.put ("/proveedores/:name",(req,res)=>{
     const{ name,city,discount}=req.body;
     proveedorSchema
-    .updateOne({_id:id},{$set:{name,city,discount}})
+    .updateOne({name : req.params.name},{$set:{name,city,discount}})
     .then((data)=>res.json(data))
     .catch ((error)=>res.json({message:error}))
  });  
