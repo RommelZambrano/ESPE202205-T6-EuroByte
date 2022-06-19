@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const usuarioSchema = mongoose.Schema({
+const usuariosSchema = mongoose.Schema({
   name: {
     type: String,
     required: true
@@ -15,8 +15,16 @@ const usuarioSchema = mongoose.Schema({
   },
   ci: {
     type: Number,
-    required: true
+    required: unique
   }
 });
 
-module.exports = mongoose.model('Usuarios', usuarioSchema, 'Usuarios');
+usuariosSchema.set('toJSON', {
+  virtuals: true,     
+  versionKey: false, 
+  transform: (doc, ret) => {
+    delete ret._id;
+  }
+});
+
+module.exports = mongoose.model('Usuarios', usuariosSchema, 'Usuarios');
