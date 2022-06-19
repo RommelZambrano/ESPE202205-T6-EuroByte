@@ -13,7 +13,7 @@ Content-Type: application/json
 GET http://localhost:2000/api/usuarios HTTP/1.1
 
 ###
-GET http://localhost:2000/api/usuarios/62aad1a6ac86648ad500915c HTTP/1.1
+GET http://localhost:2000/api/usuarios/1765378913 HTTP/1.1
 
 ###
 DELETE http://localhost:2000/api/usuarios/62aad50de809af36c5785e49 HTTP/1.1
