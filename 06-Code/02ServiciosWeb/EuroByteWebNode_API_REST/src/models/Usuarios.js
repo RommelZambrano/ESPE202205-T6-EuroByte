@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const uniqueValidate = require('mongoose-unique-validator')
 
 const usuariosSchema = mongoose.Schema({
   name: {
@@ -15,7 +16,7 @@ const usuariosSchema = mongoose.Schema({
   },
   ci: {
     type: Number,
-    required: unique
+    unique: true
   }
 });
 
@@ -27,4 +28,5 @@ usuariosSchema.set('toJSON', {
   }
 });
 
+usuariosSchema.pluggin(uniqueValidate)
 module.exports = mongoose.model('Usuarios', usuariosSchema, 'Usuarios');
