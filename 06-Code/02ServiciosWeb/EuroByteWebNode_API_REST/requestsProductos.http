@@ -1,5 +1,15 @@
 ###
 POST http://localhost:8080/api/productos HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Manzana",
+  "description": "Fruta",
+  "quantity": 4,
+  "price": 1,
+  "total": 4,
+  "profit": 1
+}
 
 ###
 GET http://localhost:8080/api/productos HTTP/1.1
@@ -12,7 +22,16 @@ DELETE http://localhost:8080/api/productos/Sandia HTTP/1.1
 
 ###
 PUT http://localhost:8080/api/productos/Aguacate HTTP/1.1
+Content-Type: application/json
 
+{
+  "name": "Manzana",
+  "description": "Fruta",
+  "quantity": 3,
+  "price": 3,
+  "total": 9,
+  "profit": 3
+}
 
 
 
