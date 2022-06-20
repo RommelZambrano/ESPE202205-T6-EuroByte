@@ -11,7 +11,7 @@ const metodoRoute = require("./routes/MetodoPago")
 
 // settings
 const app = express();
-const port = process.env.PORT || 2000;
+const port = process.env.PORT || 8080;
 
 // middlewares
 app.use(express.json());

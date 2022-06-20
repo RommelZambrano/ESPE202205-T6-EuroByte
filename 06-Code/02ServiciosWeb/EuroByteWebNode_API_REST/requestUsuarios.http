@@ -1,5 +1,5 @@
 ###
-POST http://localhost:2000/api/usuarios HTTP/1.1
+POST http://localhost:8080/api/usuarios HTTP/1.1
 Content-Type: application/json
 
 {
@@ -10,16 +10,16 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:2000/api/usuarios HTTP/1.1
+GET http://localhost:8080/api/usuarios HTTP/1.1
 
 ###
-GET http://localhost:2000/api/usuarios/1765378913 HTTP/1.1
+GET http://localhost:8080/api/usuarios/1765378913 HTTP/1.1
 
 ###
-DELETE http://localhost:2000/api/usuarios/62aad50de809af36c5785e49 HTTP/1.1
+DELETE http://localhost:8080/api/usuarios/62aad50de809af36c5785e49 HTTP/1.1
 
 ###
-PUT http://localhost:2000/api/usuarios/62aad50efaa5cfba70effcd0 HTTP/1.1
+PUT http://localhost:8080/api/usuarios/62aad50efaa5cfba70effcd0 HTTP/1.1
 Content-Type: application/json
 
 {
