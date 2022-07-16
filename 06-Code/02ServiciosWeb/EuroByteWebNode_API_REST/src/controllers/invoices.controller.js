@@ -39,14 +39,14 @@ export const getAllInvoices = async (req, res) => {
     const invoicesGet = await Invoice.find({})
       .populate("client_ID", {
         _id: 0,
-        name: 1,
+        name_client: 1,
         email: 1,
         CI: 1,
         address: 1,
       })
       .populate("product_ID", {
         _id: 0,
-        name: 1,
+        name_product: 1,
         description: 1,
       });
     res.json(invoicesGet);
