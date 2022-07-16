@@ -6,10 +6,8 @@ export const postInvoices = async (req, res) => {
     (!req.body.client_ID,
     !req.body.product_ID,
     !req.body.quantity,
-    !req.body.price,
-    !req.body.subtotal,
-    !req.body.IVA,
-    !req.body.total)
+    !req.body.price
+    )
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
@@ -98,10 +96,13 @@ export const putInvoice = async (req, res) => {
   const { id } = req.params;
   const invoice = await Invoice.findByIdAndUpdate(id, {
     $set: {
-      name: req.body.name,
-      product: req.body.products,
-      IVA: (req.body.IVA = 0.12 * req.body.total),
-      total: +req.body.total + +req.body.IVA,
+      client_ID: req.body.client_ID,
+      product_ID: req.body.product_ID,
+      quantity: req.body.quantity,
+      price: req.body.price,
+      subtotal: (req.body.subtotal = req.body.price * req.body.quantity),
+      IVA: (req.body.IVA = 0.12 * req.body.subtotal),
+      total: (req.body.total = +req.body.subtotal + +req.body.IVA),
     },
   });
   if (!invoice)

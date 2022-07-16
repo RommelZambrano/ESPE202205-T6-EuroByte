@@ -3,7 +3,7 @@ import Product from "../models/Products";
 //POST
 export const postProducts = async (req, res) => {
   if (
-    (!req.body.name_product, !req.body.description, !req.body.provider , !req.body.price, !req.body.quantity)
+    (!req.body.name_product, !req.body.description, !req.body.provider_ID, !req.body.price, !req.body.quantity)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
@@ -13,7 +13,7 @@ export const postProducts = async (req, res) => {
     const newProduct = new Product({
       name_product: req.body.name_product,
       description: req.body.description,
-      provider: req.body.provider,
+      provider_ID: req.body.provider_ID,
       price: req.body.price,
       quantity: req.body.quantity,
       total: (req.body.total = req.body.price * req.body.quantity)
@@ -30,7 +30,7 @@ export const postProducts = async (req, res) => {
 //GET
 export const getAllProducts = async (req, res) => {
   try {
-    const productsGet = await Product.find({}).populate("provider",{
+    const productsGet = await Product.find({}).populate("provider_ID",{
       _id: 0,
       name_provider: 1,
       city: 1
@@ -82,7 +82,7 @@ export const putProduct = async (req, res) => {
     $set: {
       name_product: req.body.name_product,
       description: req.body.description,
-      provider: req.body.provider,
+      provider_ID: req.body.provider_ID,
       price: req.body.price,
       quantity: req.body.quantity,
       total: (req.body.total = req.body.price * req.body.quantity)
