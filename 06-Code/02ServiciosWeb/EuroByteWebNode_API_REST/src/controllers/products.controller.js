@@ -3,7 +3,11 @@ import Product from "../models/Products";
 //POST
 export const postProducts = async (req, res) => {
   if (
-    (!req.body.name_product, !req.body.description, !req.body.provider_ID, !req.body.price, !req.body.quantity)
+    (!req.body.name_product,
+    !req.body.description,
+    !req.body.provider_ID,
+    !req.body.price,
+    !req.body.quantity)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
@@ -16,7 +20,7 @@ export const postProducts = async (req, res) => {
       provider_ID: req.body.provider_ID,
       price: req.body.price,
       quantity: req.body.quantity,
-      total: (req.body.total = req.body.price * req.body.quantity)
+      total: (req.body.total = req.body.price * req.body.quantity),
     });
     const productSave = await newProduct.save();
     res.json(productSave);
@@ -30,12 +34,11 @@ export const postProducts = async (req, res) => {
 //GET
 export const getAllProducts = async (req, res) => {
   try {
-    const productsGet = await Product.find({}).populate("provider_ID",{
+    const productsGet = await Product.find({}).populate("provider_ID", {
       _id: 0,
       name_provider: 1,
-      city: 1
-    }
-    );
+      city: 1,
+    });
     res.json(productsGet);
   } catch (error) {
     res.status(500).json({
@@ -85,16 +88,16 @@ export const putProduct = async (req, res) => {
       provider_ID: req.body.provider_ID,
       price: req.body.price,
       quantity: req.body.quantity,
-      total: (req.body.total = req.body.price * req.body.quantity)
+      total: (req.body.total = req.body.price * req.body.quantity),
     },
-  }); 
+  });
   if (!product)
     return res.status(400).json({
       message: `Product with id ${id} does not exist`,
-    })
+    });
   else {
     return res.status(200).json({
       message: `Product were update succefully `,
-    })
-  };
+    });
+  }
 };

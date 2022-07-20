@@ -6,8 +6,7 @@ export const postInvoices = async (req, res) => {
     (!req.body.client_ID,
     !req.body.product_ID,
     !req.body.quantity,
-    !req.body.price
-    )
+    !req.body.price)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
