@@ -36,7 +36,7 @@ export function Login(loginValues) {
       } else {
         swal.fire({
           title: "Credenciales Incorrectas",
-          text: "Ingrese un Email o contraseña validos",
+          text: "Ingrese un Email y contraseña validos",
           icon: "error",
           confirmButtonColor: "primary",
         });
