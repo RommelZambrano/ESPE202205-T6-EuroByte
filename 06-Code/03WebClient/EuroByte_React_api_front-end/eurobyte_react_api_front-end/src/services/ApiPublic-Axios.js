@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const baseUrl='https://api.plos.org'
 
-export async function getID(title){
+export async function getTitle(title){
     try{
         const response= await axios({
             url:`${baseUrl}/search?q=title:${title}`,

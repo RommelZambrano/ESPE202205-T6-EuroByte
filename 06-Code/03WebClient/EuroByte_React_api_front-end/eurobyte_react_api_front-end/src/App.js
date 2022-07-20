@@ -11,7 +11,7 @@ import ProductList from "./views/products/Product-List";
 //provider routes
 import ProviderList from "./views/providers/Provider-List";
 //journals routes
-
+import ApiList from "./views/api_public/Api-List";
 
 const App = () => {
   return (
@@ -23,7 +23,7 @@ const App = () => {
         <Route path="/listUsers" element={<UserList />} />
         <Route path="/listProducts" element={<ProductList />} />
         <Route path="/listProviders" element={<ProviderList />} />
-
+        <Route path="/listDocs" element={<ApiList />} />
       </Routes>
     </BrowserRouter>
   );
