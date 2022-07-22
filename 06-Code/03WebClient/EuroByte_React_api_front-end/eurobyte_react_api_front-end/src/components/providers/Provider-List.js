@@ -49,15 +49,6 @@ const useStyles = makeStyles((theme) => ({
 const TableProvider = (props) => {
   const classes = useStyles();
   const providers = props.providers;
-  const updateRegister = props.updateRegister;
-  const deleteRegister = props.deleteRegister;
-
-  const handleDelete = (idProvider) => {
-    deleteRegister(idProvider);
-  };
-  const handleUpdate = (values) => {
-    updateRegister(values);
-  };
 
   const columns = [
     {

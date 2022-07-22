@@ -10,14 +10,21 @@ export const postUsers = async (req, res) => {
     });
   }
   try {
+    const { name_user, email, password, type } = req.body;
     const newUser = new User({
-      name_user: req.body.name_user,
-      email: req.body.email,
-      password: req.body.password,
-      type: req.body.type,
+      name_user,
+      email,
+      password,
+      type,
     });
+    newUser.password = await User.encryptPassword(newUser.password);
     const userSave = await newUser.save();
-    res.json(userSave);
+    return res.status(200).json({
+      _id: userSave._id,
+      name_user: userSave.name_user,
+      email: userSave.email,
+      type: userSave.type,
+    });
   } catch (error) {
     res.status(500).json({
       message: error.message || `Error for creating and post Users`,
@@ -41,7 +48,7 @@ export const getAllUsers = async (req, res) => {
 export const getOneUser = async (req, res) => {
   const { id } = req.params;
   try {
-    const user = await User.findById(id);
+    const user = await User.findOne(id);
     if (!user)
       return res.status(400).json({
         message: `User with id ${id} does not exist`,

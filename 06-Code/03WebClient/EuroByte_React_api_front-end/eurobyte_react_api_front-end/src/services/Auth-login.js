@@ -2,11 +2,13 @@ import axios from "axios";
 import Cookies from "universal-cookie/es6";
 import swal from "sweetalert2";
 const cookies = new Cookies();
-const uri = process.env.REACT_APP_BASE_URL;
+const URI = process.env.REACT_APP_BASE_URL;
 
-export function Login(loginValues) {
-  axios
-    .get(`${uri}/api/users`)
+export async function Login(loginValues) {
+  await axios({
+    url: `${URI}/api/users`,
+    method: "GET",
+  })
     .then((response) => {
       const data = response.data;
       var dataLogin = null;

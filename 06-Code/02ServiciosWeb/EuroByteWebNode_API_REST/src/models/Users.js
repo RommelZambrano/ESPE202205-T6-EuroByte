@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import bcrypt from "bcryptjs";
 const uniqueValidator = require("mongoose-unique-validator");
 
 const usersSchema = new Schema(
@@ -30,6 +31,14 @@ const usersSchema = new Schema(
     timestamps: true
   }
 );
-usersSchema.plugin(uniqueValidator);
 
+usersSchema.plugin(uniqueValidator);
+usersSchema.statics.encryptPassword = async (password) => {
+  const salt = await bcrypt.genSalt(10);
+  return await bcrypt.hash(password, salt);
+};
+
+usersSchema.statics.comparePassword = async (password, receivedPassword) => {
+  return await bcrypt.compare(password, receivedPassword)
+}
 export default model("Users", usersSchema);

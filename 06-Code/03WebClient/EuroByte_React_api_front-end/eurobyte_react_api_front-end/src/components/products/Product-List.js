@@ -1,7 +1,6 @@
 import React from "react";
 import Paper from "@mui/material/Paper";
 import { DataGrid } from "@mui/x-data-grid";
-//import ProductDelete from "./Product-Delete";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
@@ -49,15 +48,6 @@ const TableProduct = (props) => {
   const classes = useStyles();
   const products = props.products;
   const providers = props.providers;
-  const updateRegister = props.updateRegister;
-  const deleteRegister = props.deleteRegister;
-
-  const handleDelete = (idProduct) => {
-    deleteRegister(idProduct);
-  };
-  const handleUpdate = (values) => {
-    updateRegister(values);
-  };
 
   const getProviderById = (idProvider) => {
     for (var i = 0; i < providers.length; i++) {
@@ -140,7 +130,7 @@ const TableProduct = (props) => {
             id: item._id,
             name_product: item.name_product,
             description: item.description,
-            provider_ID:  item.provider_ID.name_provider,
+            provider_ID:  getProviderById(item.provider_ID.name_provider),
             quantity: item.quantity,
             price: item.price,
             total: item.total,

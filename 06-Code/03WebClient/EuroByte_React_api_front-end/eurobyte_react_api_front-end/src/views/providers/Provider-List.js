@@ -1,8 +1,6 @@
 import ProviderList from "../../components/providers/Provider-List";
 import {
   getProviders,
-  deleteProvider,
-  putProvider,
 } from "../../services/Providers-Axios";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -25,13 +23,6 @@ const useStyles = makeStyles((theme) => ({
 const ListProvider = () => {
   const classes = useStyles();
   const [providers, setProviders] = useState([]);
-  const deleteRegister = (idProvider) => {
-    deleteProvider(idProvider);
-  };
-
-  const updateRegister = (values) => {
-    putProvider(values);
-  };
 
   useEffect(() => {
     async function loadProviders() {
@@ -62,8 +53,7 @@ const ListProvider = () => {
         <br />
         <ProviderList
           providers={providers}
-          deleteRegister={deleteRegister}
-          updateRegister={updateRegister}
+
         />
       </Box>
     </>

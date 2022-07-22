@@ -1,8 +1,6 @@
 import ProductList from "../.././components/products/Product-List";
 import {
   getProducts,
-  deleteProduct,
-  putProduct,
 } from "../../services/Products-Axios";
 import { Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
@@ -29,13 +27,6 @@ const ListProduct = () => {
   const classes = useStyles();
   const [products, setProducts] = useState([]);
   const [providers, setProviders] = useState([]);
-  const deleteRegister = (idProduct) => {
-    deleteProduct(idProduct);
-  };
-
-  const updateRegister = (values) => {
-    putProduct(values);
-  };
 
   useEffect(() => {
     async function loadProviders() {
@@ -78,8 +69,6 @@ const ListProduct = () => {
         <ProductList
           products={products}
           providers={providers}
-          deleteRegister={deleteRegister}
-          updateRegister={updateRegister}
         />
       </Box>
     </>
