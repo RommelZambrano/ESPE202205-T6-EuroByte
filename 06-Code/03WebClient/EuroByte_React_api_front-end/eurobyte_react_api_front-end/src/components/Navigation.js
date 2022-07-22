@@ -67,9 +67,6 @@ const NavigationAdmin = () => {
   const handleMenuAdmin = (event) => {
     setAnchorAdmin(event.currentTarget);
   };
-  const handleOpenFormMenu = (event) => {
-    setAnchorForms(event.currentTarget);
-  };
   const handleOpenReportMenu = (event) => {
     setAnchorReports(event.currentTarget);
   };

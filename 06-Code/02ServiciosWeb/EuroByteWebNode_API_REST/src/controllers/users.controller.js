@@ -1,4 +1,6 @@
 import User from "../models/Users";
+import jwt from "jsonwebtoken";
+import config from "../config";
 
 //POST
 export const postUsers = async (req, res) => {
@@ -14,12 +16,16 @@ export const postUsers = async (req, res) => {
     const newUser = new User({
       name_user,
       email,
-      password,
+      password: await User.encryptPassword(password),
       type,
     });
     newUser.password = await User.encryptPassword(newUser.password);
     const userSave = await newUser.save();
+    const token = jwt.sign({ id: userSave._id }, config.SECRET, {
+      expiresIn: 86400,
+    }); // 24 hours
     return res.status(200).json({
+      token,
       _id: userSave._id,
       name_user: userSave.name_user,
       email: userSave.email,
@@ -35,7 +41,9 @@ export const postUsers = async (req, res) => {
 //GET
 export const getAllUsers = async (req, res) => {
   try {
-    const usersGet = await User.find();
+    const usersGet = await User.find(
+      
+    );
     res.json(usersGet);
   } catch (error) {
     res.status(500).json({

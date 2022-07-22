@@ -6,13 +6,13 @@ Content-Type: application/json
 
 {
     "name_user": "Rommel",
-    "email": "rzam@hotmail.com",
+    "email": "rzamd@hotmail.com",
     "password": "admin123",
     "type": 1 
 }
 
 ###
-GET http://localhost:8080/api/users/ HTTP/1.1
+GET http://localhost:8080/api/users/:id HTTP/1.1
 
 ###
 DELETE http://localhost:8080/api/users/62c79d0bc01242ce0bec6af7 HTTP/1.1

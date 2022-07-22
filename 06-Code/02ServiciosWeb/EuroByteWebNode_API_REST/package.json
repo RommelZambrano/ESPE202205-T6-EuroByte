@@ -1,7 +1,7 @@
 {
   "name": "deploy-rest-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rest Services API",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
@@ -9,7 +9,7 @@
     "start": "node dist/index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Team 6 EuroByte",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",

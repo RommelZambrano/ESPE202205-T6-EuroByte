@@ -38,10 +38,9 @@ export async function postUser(userData, values, setValues) {
 
     setValues({
       name_user: "",
-      description: "",
-      quantity: "",
-      price: "",
-      total: "",
+      email: "",
+      password: "",
+      type: 0,
     });
   } catch (error) {
     console.log(error);

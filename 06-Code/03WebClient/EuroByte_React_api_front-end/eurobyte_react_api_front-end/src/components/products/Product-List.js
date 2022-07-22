@@ -47,15 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const TableProduct = (props) => {
   const classes = useStyles();
   const products = props.products;
-  const providers = props.providers;
 
-  const getProviderById = (idProvider) => {
-    for (var i = 0; i < providers.length; i++) {
-      if (providers[i]._id === idProvider) {
-        return providers[i].name_provider;
-      }
-    }
-  };
   const columns = [
     {
       field: "name_product",
@@ -130,7 +122,7 @@ const TableProduct = (props) => {
             id: item._id,
             name_product: item.name_product,
             description: item.description,
-            provider_ID:  getProviderById(item.provider_ID.name_provider),
+            provider_ID: item.provider_ID.name_provider,
             quantity: item.quantity,
             price: item.price,
             total: item.total,
