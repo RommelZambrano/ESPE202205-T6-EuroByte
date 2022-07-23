@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "110vh",
+    height: "105vh",
   },
   container: {
     opacity: "1",
@@ -58,7 +58,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
   },
   button: {
-    margin: theme.spacing(2, 0, 3),
+    margin: theme.spacing(3, 0, 3),
   },
 }));
 

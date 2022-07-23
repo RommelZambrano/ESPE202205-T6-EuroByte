@@ -15,7 +15,6 @@ const app = express();
 
 //settings
 app.set("pkg", pkg);
-app.set("json spaces", 4);
 
 //middlewares
 app.use(cors());
