@@ -16,10 +16,9 @@ export const postUsers = async (req, res) => {
     const newUser = new User({
       name_user,
       email,
-      password: await User.encryptPassword(password),
+      password,
       type,
     });
-    newUser.password = await User.encryptPassword(newUser.password);
     const userSave = await newUser.save();
     const token = jwt.sign({ id: userSave._id }, config.SECRET, {
       expiresIn: 86400,
