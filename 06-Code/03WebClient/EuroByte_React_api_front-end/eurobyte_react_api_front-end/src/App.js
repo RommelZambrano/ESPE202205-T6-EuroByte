@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 //admin
 import Login from "./components/Auth-login";
 import Admin from "./views/AdminLayout";
+import SignUp from "./views/Auth-signup";
 //user routes
 import User from "./views/users/User-Form";
 import UserList from "./views/users/User-List";
@@ -19,6 +20,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/homeAdmin" element={<Admin />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="/addUser" element={<User />} />
         <Route path="/listUsers" element={<UserList />} />
         <Route path="/listProducts" element={<ProductList />} />

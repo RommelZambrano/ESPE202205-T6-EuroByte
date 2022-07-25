@@ -5,19 +5,19 @@ import config from "../config";
 //POST
 export const postUsers = async (req, res) => {
   if (
-    (!req.body.name_user, !req.body.email, !req.body.password, !req.body.type)
+    (!req.body.name_user, !req.body.email, !req.body.password)
   ) {
     return res.status(400).send({
       message: `Content cannot be empty`,
     });
   }
   try {
-    const { name_user, email, password, type } = req.body;
+    const { name_user, email, password } = req.body;
     const newUser = new User({
       name_user,
       email,
       password,
-      type,
+      type : req.body.type = 1,
     });
     const userSave = await newUser.save();
     const token = jwt.sign({ id: userSave._id }, config.SECRET, {

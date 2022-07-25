@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    height: "105vh",
+    height: "110vh",
   },
   container: {
     opacity: "1",
@@ -191,7 +191,7 @@ function App() {
                
             <InputLabel align="center">
               ¿No tienes una cuenta?{" "}
-              <a href="/signIn">
+              <a href="/signup">
                 Registrate
               </a>
               
