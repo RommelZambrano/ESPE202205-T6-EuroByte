@@ -3,11 +3,9 @@ import AppBar from "@mui/material/AppBar";
 import AdbIcon from "@mui/icons-material/Adb";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import MenuItem from "@mui/material/MenuItem";
 import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@mui/material/IconButton";
 
@@ -30,21 +28,21 @@ const useStyles = makeStyles((theme) => ({
 const NavigationAdmin = () => {
   const classes = useStyles();
   const [anchorForms, setAnchorForms] = React.useState(null);
-  const [anchorReports, setAnchorReports] = React.useState(null);
+  const [setAnchorReports] = React.useState(null);
   const [anchorAccount, setAnchorAccount] = React.useState(null);
   const [setAnchorAdmin] = React.useState(null);
  
   const handleListJournals = () => {
-    window.location.href = "/listDocs";
+    window.location.href = "/";
+  };
+  const handleInformation = () => {
+    window.location.href = "/informationClient";
   };
   const IconRef = () => {
     window.location.href = "/";
   };
   const handleMenuAdmin = (event) => {
     setAnchorAdmin(event.currentTarget);
-  };
-  const handleOpenReportMenu = (event) => {
-    setAnchorReports(event.currentTarget);
   };
 
   const handleClose = () => {
@@ -95,26 +93,26 @@ const NavigationAdmin = () => {
                 },
                 mr: 4,
               }}
-              onClick={handleOpenReportMenu}
+              onClick={handleListJournals}
             >
               Registros API
             </Button>
-            <Menu
-              sx={{ mt: "45px" }}
-              id="subMenuReports"
-              anchorEl={anchorReports}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "left",
+            <Button
+              className={classes.link}
+              key="reports"
+              sx={{
+                display: {
+                  xs: "none",
+                  color: "white",
+                  md: "flex",
+                  flexGrow: 0.02,
+                },
+                mr: 4,
               }}
-              keepMounted
-              open={Boolean(anchorReports)}
-              onClose={handleClose}
+              onClick={handleInformation}
             >
-              <MenuItem onClick={handleListJournals}>
-                <Typography textAlign="center">API Publica</Typography>
-              </MenuItem>
-            </Menu>
+              Informacion de la Maquina Cliente
+            </Button>
           </Box>
           <Box sx={{ flexGrow: 0.02 }}>
             <IconButton
