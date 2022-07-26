@@ -1,16 +1,15 @@
-import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ApiList from "./views/api_public/Api-List.js";
+import axios from "axios";
 
-const App =() => {
+const URI = "https://api.plos.org";
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<ApiList />} />
-
-      </Routes>
-    </BrowserRouter>
-  );
+export async function getTitle(title) {
+  try {
+    const response = await axios({
+      url: `${URI}/search?q=title:${title}`,
+      method: "GET",
+    });
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
 }
-export default App;
