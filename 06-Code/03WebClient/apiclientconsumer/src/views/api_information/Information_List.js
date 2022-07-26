@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
   },
   h2: {
-    flexDirection: "column",
+    flexDirection: "center",
     justifyContent: "center",
     textAlign: "center",
   },
@@ -32,7 +32,7 @@ function Information_list() {
   const [IP, setIP] = useState([]);
 
   useEffect(() => {
-    async function loadInfoPc() {
+    async function loadInformation() {
       const response = await getInformation();
       setBrowser(`${response.headers["Sec-Ch-Ua"]}`.split(`"`));
       setLanguage(response.headers["Accept-Language"]);
@@ -41,7 +41,7 @@ function Information_list() {
       setHost(response.headers.Host);
     }
 
-    loadInfoPc();
+    loadInformation();
   }, []);
 
   function lenguague() {
@@ -64,7 +64,7 @@ function Information_list() {
           <Inf title="Idioma de sistema" info={lenguague()} />
           <Inf title="Host Remoto" info={host}/>
           <Inf title="Direccion IP" info={IP}/>
-          <Inf title="Navegador" info={browser[5]}/> 
+          <Inf title="Tipo de Navegador" info={browser[5]}/> 
           <Inf title="Sistema Operativo" info={sistem_Operative[1]} />
         </Box>
     </div>
