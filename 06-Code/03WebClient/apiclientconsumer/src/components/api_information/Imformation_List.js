@@ -1,7 +1,6 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
+import Card from "@mui/material/Card";  
 import Typography from "@mui/material/Typography";
 
 export default function CardInfo({ title, info }) {
@@ -17,13 +16,11 @@ export default function CardInfo({ title, info }) {
           alignItems: "center",
         }}
       >
-        <CardContent >
         <Box sx={{ display: "flex", alignItems: "center", pl: 15, pb: -4 }}>
           <Typography  variant="h5" >
             {title}
           </Typography>
           </Box>
-        </CardContent>
         <Box sx={{ display: "flex", alignItems: "center", pl: 15, pb: 4 }}>
           <Typography  variant="h7" >
             {info}
