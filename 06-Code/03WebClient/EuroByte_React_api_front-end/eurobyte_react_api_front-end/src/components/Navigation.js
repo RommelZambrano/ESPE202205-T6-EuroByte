@@ -55,9 +55,6 @@ const NavigationAdmin = () => {
   const handleListProvider = () => {
     window.location.href = "/listProviders";
   };
-  const handleListJournals = () => {
-    window.location.href = "/listDocs";
-  };
   const IconRef = () => {
     window.location.href = "./homeAdmin";
   };
@@ -169,9 +166,6 @@ const NavigationAdmin = () => {
               </MenuItem>
               <MenuItem onClick={handleListProduct}>
                 <Typography textAlign="center">Productos</Typography>
-              </MenuItem>
-              <MenuItem onClick={handleListJournals}>
-                <Typography textAlign="center">API Publica</Typography>
               </MenuItem>
             </Menu>
           </Box>
